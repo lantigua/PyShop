@@ -3,12 +3,11 @@ from django.shortcuts import render
 from .models import Product
 
 
-# /products = index
 def index(request):
-    products = Product
+    products = Product.objects.all()
     return render(request, 'index.html',
                   {'products': products})
 
 
 def new(request):
-    return HttpResponse('New Products')
+    return HttpResponse('Products')
